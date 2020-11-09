@@ -1,0 +1,29 @@
+Le Backlog Product
+Sprint 0 : -La mise en place de l'équipe et de l'organisationSprint 1 : -Documentation et Autoformation
+           -Génération du labyrintheSprint 2 : -Création héroSprint 3 : -Ajout des cases spécialesSprint 4 : -Génération monstres
+           -Génération fantômesSprint 5:  -Dashboard
+
+Sprint
+Sprint 0 :
+* La mise en place de l'équipe et de l'organisation	
+	Tâches: 
+		Connaitre la composition de chaque équipe		Mettre en place un repository git (github)
+
+Sprint 1*Documentation et autoformation
+	Tâches :		Documentation sur les nouveautés		Installation des environnements logiciels du travail*Génération du labyrinthe
+	Tâches :
+		Créer les interface de labyrinthe pour chaque niveau
+Sprint 2* Création héro
+	Tâches:		Déplacer héro		Attaquer
+Sprint 3*Création cases spéciales
+	Tâches: 		Créer case trésors		Créer case passages		Créer case magiques		Créer case pièges
+
+Sprint 4*Génération monstres
+	Tâches:		Créer la fonction déplacerAle		Créer la fonction déplacerInt*Générations fantômes
+	Tâches:		Redéfinir les fonctions : déplacerAle et déplacerInt
+
+
+
+Sprint 5*Dashboard
+	Tâches:		Créer l’interface d’accueil 		Afficher Score
+
