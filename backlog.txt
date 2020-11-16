@@ -1,29 +1,103 @@
-Le Backlog Product
-Sprint 0 : -La mise en place de l'�quipe et de l'organisationSprint 1 : -Documentation et Autoformation
-           -G�n�ration du labyrintheSprint 2 : -Cr�ation h�roSprint 3 : -Ajout des cases sp�cialesSprint 4 : -G�n�ration monstres
-           -G�n�ration fant�mesSprint 5:  -Dashboard
-
-Sprint
-Sprint 0 :
-* La mise en place de l'�quipe et de l'organisation	
-	T�ches: 
-		Connaitre la composition de chaque �quipe		Mettre en place un repository git (github)
-
-Sprint 1*Documentation et autoformation
-	T�ches :		Documentation sur les nouveaut�s		Installation des environnements logiciels du travail*G�n�ration du labyrinthe
-	T�ches :
-		Cr�er les interface de labyrinthe pour chaque niveau
-Sprint 2* Cr�ation h�ro
-	T�ches:		D�placer h�ro		Attaquer
-Sprint 3*Cr�ation cases sp�ciales
-	T�ches:�		Cr�er case tr�sors		Cr�er case passages		Cr�er case magiques		Cr�er case pi�ges
-
-Sprint 4*G�n�ration monstres
-	T�ches:		Cr�er la fonction d�placerAle		Cr�er la fonction d�placerInt*G�n�rations fant�mes
-	T�ches:		Red�finir les fonctions�: d�placerAle et d�placerInt
+﻿Le Backlog Product
 
 
+Les fonctionnalités:
+- Le labyrinthe est généré à partir d'un fichier, en fonction du niveau sélectionné.
+- Le labyrinthe contient des murs.
+- Le héros est généré et initialement placé sur la case de départ.
+- Le héros a un nombre initial de points de vie.
+- Le héros doit pouvoir se déplacer à l’intérieur du labyrinthe, vers le haut, le bas, la droite et   la gauche. Il ne peut pas traverser les murs.
+- Il existe des cases spéciales du labyrinthe : trésor, pièges, magiques, passages. Les effets qui se déclenchent lorsqu’un personnage marche dessus sont les suivants:
+- Case trésor : le héros gagne s'il arrive sur cette case.
+- Case pièges : le personnage subit des dégâts s'il arrive sur cette case.
+- Case magique : un effet est déclenché si un personnage arrive sur cette case.
+- Case passages : le personnage est téléporté à un autre endroit de manière aléatoire s'il arrive sur cette case.
+- Les monstres sont générés et placés d'une manière aléatoire dans le labyrinthe.
+- Les fantômes, qui sont des monstres pouvant traverser les murs, sont générés et placés d'une manière aléatoire dans le labyrinthe.
+- Les monstres ont un nombre initial de points de vie. 
+- Le déplacement des monstres se fait d'une manière aléatoire ou bien d'une manière intelligente pour attraper le héros. Une fois qu’il s’approche du héros, son déplacement change de telle sorte à ce qu’il attrape le héros (poursuite), c’est ce qu’on entend par “déplacement intelligent”.
+- Le héros perd des points de vie lors d'un contact avec un monstre.
+- Le héros peut attaquer le monstre avec lequel il est en contact ou sur la case adjacente. 
+- Le héros peut récupérer des armes.
+- Le héros attaque les monstres avec des armes. 
+- Les monstres perdent des points de vie s’ils sont en contact avec le héros ou si le héros les attaque.
+- Le héros meurt s'il perd tous ses points de vie.
+- Un monstre meurt s’il perd tous ses points de vie. Dans ce cas, il disparaît de l’écran.
+- Le héros gagne des points de vie s'il tue un monstre.
 
-Sprint 5*Dashboard
-	T�ches:		Cr�er l�interface d�accueil 		Afficher Score
 
+
+
+
+
+
+
+Sprints
+
+
+
+
+Sprint 0 :  la mise en place de l'équipe et de l'organisation : 
+- Connaître la composition de chaque équipe
+- Mettre en place un repository git
+- Ajouter le tag V0.0 
+- Ajouter fichier backlog
+- Ajouter le tag V0.1
+
+
+
+
+
+
+
+
+Sprint 1: Génération du labyrinthe et initialisation du héros : 
+        - Le labyrinthe est généré à partir d'un fichier, en fonction du niveau sélectionné.
+- Le labyrinthe contient des murs.
+- Le héros est généré et initialement placé sur la case de départ.
+        - Le héros a un nombre initial de points de vie.
+
+
+
+
+Sprint 2 :Ajout de fonctionnalités au héros et génération des cases spéciales
+- Le héros doit pouvoir se déplacer à l’intérieur du labyrinthe, vers le haut, le bas,  la  droite et la gauche. Il ne peut pas traverser les murs. 
+-  Il existe des cases spéciales du labyrinthe : trésor, pièges, magiques, passages. Les effets qui se déclenchent lorsqu’un personnage marche dessus sont les suivants:
+- Case trésor : le héros gagne s'il arrive sur cette case.
+- Case pièges : le personnage subit des dégâts s'il arrive sur cette case.
+- Case magique : un effet est déclenché si un personnage arrive sur cette case.
+- Case passages : le personnage est téléporté à un autre endroit de manière aléatoire s'il arrive sur cette case.
+
+
+        
+
+
+
+
+
+
+Sprint 3 : Création des monstres
+              - Les monstres sont générés et placés d'une manière aléatoire dans le labyrinthe.
+- Les fantômes, qui sont des monstres pouvant traverser les murs, sont générés et placés d'une manière aléatoire dans le labyrinthe.
+  -Les monstres ont un nombre initial de points de vie. 
+  Le déplacement des monstres se fait d'une manière aléatoire ou bien d'une manière intelligente pour attraper le héros. Une fois qu’il s’approche du héros, son déplacement change de telle sorte à ce qu’il attrape le héros (poursuite), c’est ce qu’on entend par “déplacement intelligent”.
+
+
+
+
+
+
+Sprint 4 : Définition des attaques 
+Le héros perd des points de vie lors d'un contact avec un monstre.
+Le héros peut attaquer le monstre avec lequel il est en contact ou sur la case adjacente. 
+Le héros peut récupérer des armes.
+
+
+
+
+Sprint 5
+        Le héros attaque les monstres avec des armes. 
+        Les monstres perdent des points de vie s’ils sont en contact avec le héros ou si le héros les attaque.
+Le héros meurt s'il perd tous ses points de vie.
+Un monstre meurt s’il perd tous ses points de vie. Dans ce cas, il disparaît de l’écran.
+Le héros gagne des points de vie s'il tue un monstre.
