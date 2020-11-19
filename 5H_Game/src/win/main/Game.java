@@ -10,6 +10,7 @@ import java.awt.image.BufferStrategy;
 //import java.awt.image.BufferedImage;
 
 
+
 public class Game extends  Canvas implements Runnable {
 	
 	
@@ -27,8 +28,18 @@ public class Game extends  Canvas implements Runnable {
 		start() ;
 		
 		handler = new Handler () ;
-		handler.addObject(new Box(100,100));
-	
+	//	int j =0 ; 
+	//	for (int i=100 ; i<1000 ; i+=100) {
+    //handler.addObject(new Box(100,100,ID.obstacle));
+	//	j=j+22 ;}
+	  
+		 
+		this.addKeyListener(new KeyInput (handler));  // listening key input 
+		
+		handler.addObject(new hero(100 , 100 , ID.joueur, handler));
+		
+		
+		
 	} 
 	
 	
