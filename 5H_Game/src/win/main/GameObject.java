@@ -7,25 +7,28 @@ public abstract class GameObject {
 	
 	 protected int x , y ;  //coordonnées 
 	 protected float VelX =0 , VelY = 0 ; // vitesse
-	 protected ID id ; 
+	 public ID id;
 	 
-	 public GameObject(int x , int y ,ID id ) {
+	 public GameObject(int x , int y, ID id ) {
 		 this.x=x;
 		 this.y=y;
-		 this.id= id ;
+		 this.id = id;
 	 }
-	
-	 public ID getId() {
-		return id;
-	}
 
-	public void setId(ID id) {
-		this.id = id;
-	}
+	 
+
 
 	public abstract void tick() ;
-	 public abstract void render (Graphics g) ;
-	 public abstract Rectangle getBounds() ;
+	public abstract void render (Graphics g) ;
+	public abstract Rectangle getBounds() ;
+	 
+	 public ID getId() {
+			return id;
+		}
+
+		public void setId(ID id) {
+			this.id = id;
+		}
 
 	public int getX() {
 		return x;
@@ -34,7 +37,7 @@ public abstract class GameObject {
 	public void setX(int x) {
 		this.x = x;
 	}
- 
+
 	public int getY() {
 		return y;
 	}

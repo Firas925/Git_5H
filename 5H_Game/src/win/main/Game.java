@@ -5,21 +5,26 @@ import java.awt.Canvas ;
 import java.awt.Color;
 //import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 //import java.awt.Graphics2D;
 import java.awt.image.BufferStrategy;
+import java.awt.image.BufferedImage;
 //import java.awt.image.BufferedImage;
-
 
 
 public class Game extends  Canvas implements Runnable {
 	
 	
+	private static final long serialVersionUID = 1L;	
+	private boolean isRunning = false ;
 	
-	private boolean isRunning = false ; 
 	private Thread thread ; 
-	
-	private static final long serialVersionUID = 1L;
+	private Camera camera;
 	private Handler handler ; 
+
+	
+	
+	private BufferedImage level = null;
 	
 	
 
@@ -28,18 +33,14 @@ public class Game extends  Canvas implements Runnable {
 		start() ;
 		
 		handler = new Handler () ;
-	//	int j =0 ; 
-	//	for (int i=100 ; i<1000 ; i+=100) {
-    //handler.addObject(new Box(100,100,ID.obstacle));
-	//	j=j+22 ;}
-	  
-		 
-		this.addKeyListener(new KeyInput (handler));  // listening key input 
+		camera = new Camera(0,0) ;
+		this.addKeyListener(new KeyInput(handler));
 		
-		handler.addObject(new hero(100 , 100 , ID.joueur, handler));
+		BufferedImageLoader loader  = new BufferedImageLoader();
+		level = loader.loadImage("/lvltest.png");
 		
-		
-		
+		loadLevel(level);
+	
 	} 
 	
 	
@@ -59,7 +60,7 @@ public class Game extends  Canvas implements Runnable {
 		
 	
 		
-		
+	
 	}
 		
 	
@@ -92,7 +93,12 @@ public class Game extends  Canvas implements Runnable {
 	}
 	
 	public void tick() {   // to update everything in the game 
-		
+		for(int i = 0; i<handler.object.size();i++) {
+			if(handler.object.get(i).getId() == ID.joueur) {
+				camera.tick(handler.object.get(i));
+			}
+		}
+			
 		handler.tick() ;
 	}
     
@@ -102,20 +108,53 @@ public class Game extends  Canvas implements Runnable {
 		bs = this.getBufferStrategy() ;
 		if(bs == null) {
 			this.createBufferStrategy(3);
-			return; }
+			return; 
+			
+		}
 		
 		 
-		 Graphics g = bs.getDrawGraphics() ;
 		
+		 Graphics g = bs.getDrawGraphics() ;
+		 Graphics2D g2d = (Graphics2D) g;
+		 /////////////////////////////////
+		 
 		 g.setColor(Color.CYAN);
-		// g.drawRect (0,0 , 1000, 700);
 		 g.fillRect(0, 0, 1000, 700); 
 		 
+		 g2d.translate(-camera.getX(), -camera.getY());
 		 
 	    handler.render(g);
+	    
+	    g2d.translate(camera.getX(), camera.getY());
+	    /////////////////////////////////
 		 
 		 g.dispose();
-		 bs.show() ; 
+		 bs.show() ;
+			
+	}
+	
+	//loading the level
+	private void loadLevel(BufferedImage image) {
+		int w = image.getWidth();
+		int h = image.getHeight();
+		for(int xx=0; xx < w; xx++ ) {
+			for( int yy=0; yy< h; yy++) {
+				int pixel = image.getRGB(xx, yy);
+				// >> operator is the right shift operator int(32 bits)
+				// & with 0xff applies a bitmask (conservs only last 8 bits of pixel, setting the other values to 0
+				int red = (pixel >> 16) & 0xff; 
+				int green = (pixel >> 8) & 0xff;// 
+				int blue = (pixel) & 0xff;
+				
+				if (red ==0 & green == 0 & blue == 0)
+					handler.addObject(new Box(xx*32,yy*32, ID.boîte));
+				
+				if ( blue == 255 )
+					handler.addObject(new hero(xx*32,yy*32, ID.joueur, handler));
+				
+			}
+		}
+			
 			
 	}
 	public static void main(String[] args) {
