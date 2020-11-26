@@ -23,26 +23,26 @@ public class hero extends GameObject {
 		// déplacement 
 		
 		if (handler.isUp())
-			VelY = -3 ;
+			VelY = -5 ;
 		else if (!(handler.isDown()))
 			VelY =0 ; 
 		
 		
 		if (handler.isDown())
-			VelY = 3 ;
+			VelY = 5 ;
 		else if (!(handler.isUp()))
 			VelY =0 ; 
 		
 		
 		if (handler.isRight())
-			VelX = +3 ; 
+			VelX = +5 ; 
 		else if (!(handler.isLeft()))
 			VelX = 0 ;
 		
 		
 
 		if (handler.isLeft())
-			VelX = -3 ; 
+			VelX = -5 ; 
 		else if (!(handler.isRight()))
 			VelX = 0;
 		

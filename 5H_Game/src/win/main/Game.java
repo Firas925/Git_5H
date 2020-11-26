@@ -37,7 +37,7 @@ public class Game extends  Canvas implements Runnable {
 		this.addKeyListener(new KeyInput(handler));
 		
 		BufferedImageLoader loader  = new BufferedImageLoader();
-		level = loader.loadImage("/lvltest.png");
+		level = loader.loadImage("/lvltest4.1.png");
 		
 		loadLevel(level);
 	
@@ -149,8 +149,12 @@ public class Game extends  Canvas implements Runnable {
 				if (red ==0 & green == 0 & blue == 0)
 					handler.addObject(new Box(xx*32,yy*32, ID.boîte));
 				
+				if (green == 255)
+					handler.addObject(new Monstre(xx*32,yy*32, ID.monstre, handler));
+				
 				if ( blue == 255 )
 					handler.addObject(new hero(xx*32,yy*32, ID.joueur, handler));
+			
 				
 			}
 		}

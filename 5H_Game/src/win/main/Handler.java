@@ -1,11 +1,12 @@
 package win.main;
 
+import java.util.ArrayList;
 import java.util.LinkedList ; 
 import java.awt.Graphics; 
 
 public class Handler {
 	
-	LinkedList <GameObject> object = new LinkedList <GameObject> () ;
+	ArrayList <GameObject> object = new ArrayList <GameObject> () ;
 	
 	private boolean up = false, down = false, right = false, left = false;
 
