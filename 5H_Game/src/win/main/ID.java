@@ -6,6 +6,7 @@ public enum ID {
 	obstacle() ,
 	boîte(),
 	balle() ,
-	monstre() ;
+	monstre() ,
+	fantome() ;
 
 }

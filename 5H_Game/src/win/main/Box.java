@@ -15,8 +15,8 @@ public class Box extends GameObject {
 	
 	public void tick() {
 		
-		x += VelX;
-		y += VelY;
+		/*x += VelX;
+		y += VelY;*/
 		
 	}
 
