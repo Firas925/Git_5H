@@ -20,7 +20,7 @@ public class hero extends GameObject {
 		x+=VelX ; // evolution de la postion  
 		y+=VelY ;
 		
-		collision()
+		collision() ;
 		
 		// déplacement 
 		
@@ -56,7 +56,7 @@ public class hero extends GameObject {
 	private void collision() {
 		for(int i = 0; i < handler.object.size(); i++) {
 				GameObject tempObject = handler.object.get(i);
-				if(tempObject.getId() == ID.Box) {
+				if(tempObject.getId() == ID.boîte) {
 					if(getBounds().intersects(tempObject.getBounds())) {
 						x+=VelX*-1;
 						y+= VelY*-1;
