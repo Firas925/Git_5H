@@ -20,6 +20,8 @@ public class hero extends GameObject {
 		x+=VelX ; // evolution de la postion  
 		y+=VelY ;
 		
+		collision()
+		
 		// déplacement 
 		
 		if (handler.isUp())
@@ -51,6 +53,17 @@ public class hero extends GameObject {
 		
 	}
 
+	private void collision() {
+		for(int i = 0; i < handler.object.size(); i++) {
+				GameObject tempObject = handler.object.get(i);
+				if(tempObject.getId() == ID.Box) {
+					if(getBounds().intersects(tempObject.getBounds())) {
+						x+=VelX*-1;
+						y+= VelY*-1;
+					}
+				}
+		}
+	}
 	
 	public void render(Graphics g) {
 		g.setColor(Color.BLUE);
