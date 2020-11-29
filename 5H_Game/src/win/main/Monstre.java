@@ -29,7 +29,7 @@ public class Monstre  extends GameObject {
 		for(int i = 0 ;i<handler.object.size();i++ ) {
 			
 			  GameObject tempObject =handler.object.get(i) ;
-			  if(tempObject.getId()==ID.boÃ®te ) {
+			  if(tempObject.getId()==ID.boîte ) {
 				  
 				  if(getBoundsBig().intersects(tempObject.getBounds())) {
 					  VelX+= VelX*2 -1 ;
@@ -70,6 +70,6 @@ public class Monstre  extends GameObject {
 		
 		return new Rectangle(x-20,y-20,64,64);
 	} 
+	
 
 }
-
