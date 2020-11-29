@@ -1,0 +1,10 @@
+Review du sprint 1:
+- Le labyrinthe est généré à partir d'un fichier.
+- Le labyrinthe contient des murs.
+- Le héros est généré et initialement placé sur la case de départ.
+- Le héros doit pouvoir se déplacer à l’intérieur du labyrinthe, vers le haut, le bas,  la  droite et la gauche.
+
+Toutes les fonctionnalités prévues pour ce sprint ont pu être réalisées. Par contre, nous n'avions pas compris que le 
+labyrinthe devait être généré à partir d'un fichier qui ne soit pas une image. 
+De plus, il fallait prévoir le cas où on entrerait un autre fichier que ceux prévus par les développeurs, par exemple une 
+image dans laquelle du jaune apparaîtrait alors que cette couleur n'est pas prévue dans le code. 

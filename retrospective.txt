@@ -1,0 +1,6 @@
+Retrospective du sprint 1:
+Nous avons réussi à bien gérer notre temps car toutes les fonctionnalités prévues ont pu être implémentées. Par contre, 
+certains détails sont à revoir. Il faudra par exemple prévoir dans le code le cas où un fichier autre que ceux proposés
+par les développeurs soit utilisé pour générer le labyrinthe.
+Nous avons fait quelques erreurs dans le diagramme use case, et certains points des scénarios développés sont à revoir.
+Chacun modifiera donc le scénario qu'il a développé selon les remarques de la professeure.
