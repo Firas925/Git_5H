@@ -37,7 +37,7 @@ public class Game extends  Canvas implements Runnable {
 		this.addKeyListener(new KeyInput(handler));
 		
 		BufferedImageLoader loader  = new BufferedImageLoader();
-		level = loader.loadImage("/lvltest7.png");
+		level = loader.loadImage("/test8.png");
 		
 		loadLevel(level);
 	
@@ -118,7 +118,7 @@ public class Game extends  Canvas implements Runnable {
 		 Graphics2D g2d = (Graphics2D) g;
 		 /////////////////////////////////
 		 
-		 g.setColor(Color.CYAN);
+		 g.setColor(Color.yellow);
 		 g.fillRect(0, 0, 1000, 700); 
 		 
 		 g2d.translate(-camera.getX(), -camera.getY());
