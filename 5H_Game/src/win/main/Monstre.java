@@ -13,6 +13,7 @@ public class Monstre  extends GameObject {
 	Random r = new Random() ;
 	int choose = 0 ; 
 	int hp=100 ;
+
 	
 
 	public Monstre(int x, int y, ID id , Handler handler) {

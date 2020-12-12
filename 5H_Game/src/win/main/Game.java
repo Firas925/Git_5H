@@ -22,7 +22,8 @@ public class Game extends  Canvas implements Runnable {
 	private Camera camera;
 	private Handler handler ; 
 
-	
+	public int ptvieH = 100 ;
+	public int ptvieM = 100 ;
 	
 	private BufferedImage level = null;
 	
@@ -37,7 +38,7 @@ public class Game extends  Canvas implements Runnable {
 		this.addKeyListener(new KeyInput(handler));
 		
 		BufferedImageLoader loader  = new BufferedImageLoader();
-		level = loader.loadImage("/test8.png");
+		level = loader.loadImage("/lvltest7.png");
 		
 		loadLevel(level);
 	
@@ -118,7 +119,7 @@ public class Game extends  Canvas implements Runnable {
 		 Graphics2D g2d = (Graphics2D) g;
 		 /////////////////////////////////
 		 
-		 g.setColor(Color.yellow);
+		 g.setColor(Color.cyan);
 		 g.fillRect(0, 0, 1000, 700); 
 		 
 		 g2d.translate(-camera.getX(), -camera.getY());
@@ -126,6 +127,32 @@ public class Game extends  Canvas implements Runnable {
 	    handler.render(g);
 	    
 	    g2d.translate(camera.getX(), camera.getY());
+	    
+	    
+	     g.setColor(Color.gray);
+		 g.fillRect(50, 20, 200, 32); 
+	     g.setColor(Color.green);
+		 g.fillRect(50, 20, 2*ptvieH, 32); 
+	     g.setColor(Color.black);
+		 g.drawRect(50, 20, 200, 32); 
+		 g.setColor(Color.white);
+		 g.drawString(" hero " , 50 , 20 );
+	    
+		 
+	     g.setColor(Color.gray);
+		 g.fillRect(750, 20, 200, 32); 
+	     g.setColor(Color.red);
+		 g.fillRect(750, 20, 2*ptvieM, 32); 
+	     g.setColor(Color.black);
+		 g.drawRect(750, 20, 200, 32);
+		 g.setColor(Color.white);
+		 g.drawString(" monstre " , 750 , 20 );
+	    
+	    
+	    
+	    
+	    
+	    
 	    /////////////////////////////////
 		 
 		 g.dispose();

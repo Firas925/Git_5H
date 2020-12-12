@@ -6,6 +6,9 @@ import java.awt.Graphics;
 
 public class Handler {
 	
+	
+	
+	
 	ArrayList <GameObject> object = new ArrayList <GameObject> () ;
 	
 	private boolean up = false, down = false, right = false, left = false;

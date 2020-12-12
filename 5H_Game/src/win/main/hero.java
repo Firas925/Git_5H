@@ -17,6 +17,10 @@ public class hero extends GameObject {
 	}
 
 	
+
+
+
+
 	public void tick() {
 		x+=VelX ; // evolution de la postion  
 		y+=VelY ;
