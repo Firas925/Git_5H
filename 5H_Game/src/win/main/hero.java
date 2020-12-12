@@ -70,6 +70,20 @@ public class hero extends GameObject {
 					}
 				}
 				
+				
+				
+				if(tempObject.getId() == ID.passage) {
+					if(getBounds().intersects(tempObject.getBounds())) {
+						handler.removeObject(tempObject);
+						handler.removeObject(this);
+						handler.addObject(new hero(170,180, ID.joueur, handler,game));
+						
+						
+					
+					
+					}}
+				
+				
 				if(tempObject.getId() == ID.piege) {
 					if(getBounds().intersects(tempObject.getBounds())) {
 						

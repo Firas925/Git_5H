@@ -192,8 +192,6 @@ public class Game extends  Canvas implements Runnable {
 				int blue = (pixel) & 0xff;
 				
 				
-				
-				
 				if ((red==0) & (green ==150 ) & (blue == 150))
 					handler.addObject(new passage(xx*32,yy*32, ID.passage));
 				
@@ -219,20 +217,19 @@ public class Game extends  Canvas implements Runnable {
 				if (green == 255)
 					handler.addObject(new Monstre(xx*32,yy*32, ID.monstre, handler));
 				
-				if ( blue == 255 ) {
-					handler.addObject(new hero(xx*32,yy*32, ID.joueur, handler,this));
-					 ok = 1 ;
-					 }
-
+				if ( blue == 255 ) 
+					handler.addObject(new hero(xx*32,yy*32, ID.joueur, handler,this)); 
+					
+					
 				
 
 			
 				
 			}
 		}
-			
-			
 	}
+			
+	
 	public static void main(String[] args) {
 		
 		
