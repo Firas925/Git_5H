@@ -30,7 +30,7 @@ public class Monstre  extends GameObject {
 		for(int i = 0 ;i<handler.object.size();i++ ) {
 			
 			  GameObject tempObject =handler.object.get(i) ;
-			  if((tempObject.getId()==ID.boîte ) || (tempObject.getId()==ID.piege ) ){
+			  if((tempObject.getId()==ID.boîte ) || (tempObject.getId()==ID.piege ) || (tempObject.getId()==ID.magique) || (tempObject.getId()==ID.passage) || (tempObject.getId()==ID.tresor) ){
 				  
 				  if(getBoundsBig().intersects(tempObject.getBounds())) {
 					  VelX+= VelX*2 -1 ;

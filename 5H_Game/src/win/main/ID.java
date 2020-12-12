@@ -9,6 +9,8 @@ public enum ID {
 	monstre() ,
 	fantome() ,
 	piege() ,
-	bonus();
+	magique(),
+	passage(),
+	tresor();
 
 }

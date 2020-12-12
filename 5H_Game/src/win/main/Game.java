@@ -26,6 +26,9 @@ public class Game extends  Canvas implements Runnable {
 	public int pointDeVie = 100;
 	
 	
+	public int ok = 0 ;
+	
+	
 	/*public int getPtvieH() {
 		return ptvieH;
 	}
@@ -43,6 +46,7 @@ public class Game extends  Canvas implements Runnable {
 	
 
 	public Game () { 
+		
 		new Window(1000,700,"5H_Game",this) ;
 		start() ;
 		
@@ -51,7 +55,7 @@ public class Game extends  Canvas implements Runnable {
 		this.addKeyListener(new KeyInput(handler));
 		
 		BufferedImageLoader loader  = new BufferedImageLoader();
-		level = loader.loadImage("/lvltest8.png");
+		level = loader.loadImage("/lvltest9.png");
 		
 		loadLevel(level);
 	
@@ -79,6 +83,7 @@ public class Game extends  Canvas implements Runnable {
 		
 	
 	public void run() {
+		
 		this.requestFocus();
 		long lastTime = System.nanoTime();
 		double amountOfTicks = 60.0;
@@ -104,7 +109,7 @@ public class Game extends  Canvas implements Runnable {
 		
 		}
 		stop() ;
-	}
+	} 
 	
 	public void tick() {   // to update everything in the game 
 		for(int i = 0; i<handler.object.size();i++) {
@@ -186,8 +191,24 @@ public class Game extends  Canvas implements Runnable {
 				int green = (pixel >> 8) & 0xff;// 
 				int blue = (pixel) & 0xff;
 				
+				
+				
+				
+				if ((red==0) & (green ==150 ) & (blue == 150))
+					handler.addObject(new passage(xx*32,yy*32, ID.passage));
+				
+				
+				if ((red==255) & (green ==149 ) & (blue == 0))
+					handler.addObject(new tresor(xx*32,yy*32, ID.tresor));
+				
+				
 				if ((red == 50) & (green == 50 ) & (blue == 50))
 					handler.addObject(new piege(xx*32,yy*32, ID.piege));
+				
+				if((red==150) & (green ==0 ) & (blue == 80))
+					handler.addObject(new magique(xx*32, yy*32, ID.magique));
+				
+							
 				
 				if ((red > 200) & (green > 200) & (blue  < 10))
 					handler.addObject(new Fantome(xx*32,yy*32, ID.fantome,handler));
@@ -198,10 +219,11 @@ public class Game extends  Canvas implements Runnable {
 				if (green == 255)
 					handler.addObject(new Monstre(xx*32,yy*32, ID.monstre, handler));
 				
-				if ( blue == 255 )
+				if ( blue == 255 ) {
 					handler.addObject(new hero(xx*32,yy*32, ID.joueur, handler,this));
-				if(yellow=255)
-					handler.addObject(new Bonus(xx*32, yy*32, ID.bonus));
+					 ok = 1 ;
+					 }
+
 				
 
 			
@@ -213,7 +235,13 @@ public class Game extends  Canvas implements Runnable {
 	}
 	public static void main(String[] args) {
 		
+		
 		Game game = new Game() ; 
+		
+		if (game.ok == 0) 
+			System.out.print("hero n'existe pas") ;
+			
+			
 		
 		
 		
