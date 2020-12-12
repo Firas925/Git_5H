@@ -22,7 +22,19 @@ public class Game extends  Canvas implements Runnable {
 	private Camera camera;
 	private Handler handler ; 
 
-	public int ptvieH = 100 ;
+	public static  int ptvieH = 100 ;
+	
+	
+	/*public int getPtvieH() {
+		return ptvieH;
+	}
+
+
+
+
+	public void setPtvieH(int ptvieH) {
+		this.ptvieH = ptvieH;
+	}*/
 	public int ptvieM = 100 ;
 	
 	private BufferedImage level = null;
@@ -38,7 +50,7 @@ public class Game extends  Canvas implements Runnable {
 		this.addKeyListener(new KeyInput(handler));
 		
 		BufferedImageLoader loader  = new BufferedImageLoader();
-		level = loader.loadImage("/lvltest7.png");
+		level = loader.loadImage("/lvltest8.png");
 		
 		loadLevel(level);
 	
@@ -173,6 +185,9 @@ public class Game extends  Canvas implements Runnable {
 				int green = (pixel >> 8) & 0xff;// 
 				int blue = (pixel) & 0xff;
 				
+				if ((red == 50) & (green == 50 ) & (blue == 50))
+					handler.addObject(new piege(xx*32,yy*32, ID.piege));
+				
 				if ((red > 200) & (green > 200) & (blue  < 10))
 					handler.addObject(new Fantome(xx*32,yy*32, ID.fantome,handler));
 			
@@ -183,7 +198,7 @@ public class Game extends  Canvas implements Runnable {
 					handler.addObject(new Monstre(xx*32,yy*32, ID.monstre, handler));
 				
 				if ( blue == 255 )
-					handler.addObject(new hero(xx*32,yy*32, ID.joueur, handler));
+					handler.addObject(new hero(xx*32,yy*32, ID.joueur, handler,this));
 				
 
 			
@@ -196,6 +211,8 @@ public class Game extends  Canvas implements Runnable {
 	public static void main(String[] args) {
 		
 		Game game = new Game() ; 
+		
+		
 		
 	
 		

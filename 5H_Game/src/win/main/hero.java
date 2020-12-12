@@ -9,10 +9,12 @@ public class hero extends GameObject {
 
 	
 	Handler handler ; 
+	Game game ;
 	
-	public hero(int x, int y, ID id , Handler handler) {
+	public hero(int x, int y, ID id , Handler handler, Game game) {
 		super(x, y, id);
 		this.handler = handler ;
+		this.game=game ;
 	
 	}
 
@@ -67,7 +69,20 @@ public class hero extends GameObject {
 						y+= VelY*-1;
 					}
 				}
-		}
+				
+				if(tempObject.getId() == ID.piege) {
+					if(getBounds().intersects(tempObject.getBounds())) {
+						
+						Game.ptvieH -=5 ;
+						handler.removeObject(tempObject);
+						
+					}
+				}
+		} 
+		
+		
+		
+		
 	}
 	
 	public void render(Graphics g) {
