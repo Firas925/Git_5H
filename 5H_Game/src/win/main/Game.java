@@ -23,6 +23,7 @@ public class Game extends  Canvas implements Runnable {
 	private Handler handler ; 
 
 	public static  int ptvieH = 100 ;
+	public int pointDeVie = 100;
 	
 	
 	/*public int getPtvieH() {
@@ -199,6 +200,8 @@ public class Game extends  Canvas implements Runnable {
 				
 				if ( blue == 255 )
 					handler.addObject(new hero(xx*32,yy*32, ID.joueur, handler,this));
+				if(yellow=255)
+					handler.addObject(new Bonus(xx*32, yy*32, ID.bonus));
 				
 
 			

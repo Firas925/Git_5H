@@ -8,6 +8,7 @@ public enum ID {
 	balle() ,
 	monstre() ,
 	fantome() ,
-	piege() ;
+	piege() ,
+	bonus();
 
 }

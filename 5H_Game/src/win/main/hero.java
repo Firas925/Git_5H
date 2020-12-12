@@ -74,9 +74,13 @@ public class hero extends GameObject {
 					if(getBounds().intersects(tempObject.getBounds())) {
 						
 						Game.ptvieH -=5 ;
-						handler.removeObject(tempObject);
+						handler.removeObject(tempObject);}}
 						
-					}
+				if(tempObject.getId() == ID.bonus) {
+					if(getBounds().intersects(tempObject.getBounds())) {
+						game.pointDeVie +=25;
+						handler.removeObject(tempObject);
+						}
 				}
 		} 
 		
