@@ -96,9 +96,14 @@ public class hero extends GameObject {
 						handler.removeObject(tempObject);
 						}
 				}
-		
-		
-		} 
+				
+				if(tempObject.getId() == ID.tresor) {
+					if(getBounds().intersects(tempObject.getBounds())) {
+						System.out.println("Vous avez atteint la case trésor, le joueur a gagné! ");
+						
+					} 
+				}
+		}
 		
 		
 		

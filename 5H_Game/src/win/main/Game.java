@@ -196,7 +196,7 @@ public class Game extends  Canvas implements Runnable {
 					handler.addObject(new passage(xx*32,yy*32, ID.passage));
 				
 				
-				if ((red==255) & (green ==149 ) & (blue == 0))
+				if ((red==153) & (green == 153 ) & (blue ==153))
 					handler.addObject(new tresor(xx*32,yy*32, ID.tresor));
 				
 				
@@ -222,12 +222,18 @@ public class Game extends  Canvas implements Runnable {
 					
 					
 				
-
+				
 			
 				
 			}
 		}
 	}
+	
+	/*public void validLabyrinth() {
+		
+		
+		
+	}*/
 			
 	
 	public static void main(String[] args) {
