@@ -7,7 +7,9 @@ import java.awt.Rectangle ;
 
 public class hero extends GameObject {
 
+	 
 	
+	public static int tr; 
 	Handler handler ; 
 	Game game ;
 	
@@ -63,6 +65,7 @@ public class hero extends GameObject {
 	private void collision() {
 		for(int i = 0; i < handler.object.size(); i++) {
 				GameObject tempObject = handler.object.get(i);
+				
 				if(tempObject.getId() == ID.boîte) {
 					if(getBounds().intersects(tempObject.getBounds())) {
 						x+=VelX*-1;
@@ -78,8 +81,6 @@ public class hero extends GameObject {
 						handler.removeObject(this);
 						handler.addObject(new hero(170,180, ID.joueur, handler,game));
 						
-						
-					
 					
 					}}
 				
@@ -97,19 +98,42 @@ public class hero extends GameObject {
 						}
 				}
 				
+				
 				if(tempObject.getId() == ID.tresor) {
 					if(getBounds().intersects(tempObject.getBounds())) {
+						
+						handler.removeObject(tempObject);
+						tr = 1 ;
 						System.out.println("Vous avez atteint la case trésor, le joueur a gagné! ");
 						
 					} 
 				}
-		}
+		
+		} 
 		
 		
 		
 		
 	}
 	
+	public static int getTr() {
+		return tr;
+	}
+
+
+
+
+
+
+	public static void setTr(int tr) {
+		hero.tr = tr;
+	}
+
+
+
+
+
+
 	public void render(Graphics g) {
 		g.setColor(Color.BLUE);
 		g.fillRect(x, y, 32, 48);
