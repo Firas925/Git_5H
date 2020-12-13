@@ -23,18 +23,17 @@ public class Game extends  Canvas implements Runnable {
 	private Handler handler ; 
 
 	public static  int ptvieH = 100 ;
-	public int pointDeVie = 100;
 	
 	
-	public int ok = 0 ;
+	
+	public int okhero = 0 ;
+	public int okmonstre = 0 ;
+	public int oktresor = 0 ;
 	
 	
 	/*public int getPtvieH() {
 		return ptvieH;
 	}
-
-
-
 
 	public void setPtvieH(int ptvieH) {
 		this.ptvieH = ptvieH;
@@ -168,7 +167,26 @@ public class Game extends  Canvas implements Runnable {
 	    
 	    
 	    
-	    
+		 for(int i = 0; i<handler.object.size();i++) {
+				if(handler.object.get(i).getId() == ID.joueur) { 
+					
+					GameObject temp =  handler.object.get(i);
+					 hero h = (hero) temp  ;
+					if(h.getTr() == 1) {
+						g.setColor(Color.yellow);
+						 g.drawRect(50, 750, 200, 32);
+						 g.setColor(Color.yellow);
+						 g.drawString(" Vous avez gagné " , 50 , 750 );
+						
+						
+					}
+						
+					
+					}
+		   
+		   
+		   
+	   }
 	    
 	    
 	    /////////////////////////////////
@@ -196,8 +214,9 @@ public class Game extends  Canvas implements Runnable {
 					handler.addObject(new passage(xx*32,yy*32, ID.passage));
 				
 				
-				if ((red==255) & (green ==149 ) & (blue == 0))
-					handler.addObject(new tresor(xx*32,yy*32, ID.tresor));
+				if ((red==255) & (green ==149 ) & (blue == 0)) {
+					handler.addObject(new tresor(xx*32,yy*32, ID.tresor)); 
+					oktresor = 1 ;}
 				
 				
 				if ((red == 50) & (green == 50 ) & (blue == 50))
@@ -214,11 +233,15 @@ public class Game extends  Canvas implements Runnable {
 				if (red ==0 & green == 0 & blue == 0)
 					handler.addObject(new Box(xx*32,yy*32, ID.boîte));
 				
-				if (green == 255)
+				if (green == 255) {
 					handler.addObject(new Monstre(xx*32,yy*32, ID.monstre, handler));
+					okmonstre = 1 ;}
+
 				
-				if ( blue == 255 ) 
+				if ( blue == 255 ) {
 					handler.addObject(new hero(xx*32,yy*32, ID.joueur, handler,this)); 
+					
+				  okhero = 1 ;}
 					
 					
 				
@@ -235,9 +258,14 @@ public class Game extends  Canvas implements Runnable {
 		
 		Game game = new Game() ; 
 		
-		if (game.ok == 0) 
+		if (game.okhero == 0) 
 			System.out.print("hero n'existe pas") ;
 			
+		if (game.okmonstre == 0) 
+			System.out.print("monstre n'existe pas") ;
+		
+		if (game.oktresor == 0) 
+			System.out.print("tresor n'existe pas") ;
 			
 		
 		
