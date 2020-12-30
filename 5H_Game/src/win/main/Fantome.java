@@ -42,6 +42,19 @@ public class Fantome extends Monstre{
 						VelY=(r.nextInt(4 - -4)+ -4) ;
 					  
 			  }
+				/*  for(int i = 0 ;i<handler.object.size();i++ ) {
+
+					  GameObject tempObject =handler.object.get(i) ;
+				  
+					  if(tempObject.getId() == ID.balle) { 
+					  if(getBounds().intersects(tempObject.getBounds())) {
+					  hp-=50 ; 
+				 	  handler.removeObject(tempObject);
+					  }
+				  }
+			
+	}
+				  if(hp<=0) {handler.removeObject(this);} */
 	// } 
 	
 	//	}

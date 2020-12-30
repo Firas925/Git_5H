@@ -3,6 +3,7 @@ package win.main;
 
 import java.awt.Canvas ;
 import java.awt.Color;
+import java.awt.Font;
 //import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -31,6 +32,10 @@ public class Game extends  Canvas implements Runnable {
 	public int oktresor = 0 ;
 	
 	
+	
+	public static int balle = 100 ;
+	
+	
 	/*public int getPtvieH() {
 		return ptvieH;
 	}
@@ -52,13 +57,16 @@ public class Game extends  Canvas implements Runnable {
 		handler = new Handler () ;
 		camera = new Camera(0,0) ;
 		this.addKeyListener(new KeyInput(handler));
+		this.addMouseListener(new MouseInput(handler,camera,this));
+		
+		
 		
 		BufferedImageLoader loader  = new BufferedImageLoader();
 		level = loader.loadImage("/lvltest9.png");
 		
 		loadLevel(level);
 	
-	} 
+	}  
 	
 	
 	
@@ -165,6 +173,11 @@ public class Game extends  Canvas implements Runnable {
 		 g.setColor(Color.white);
 		 g.drawString(" monstre " , 750 , 20 );
 	    
+			Font fnt = new Font("Courier",1,20);
+			g.setFont(fnt);
+			g.setColor(Color.white);
+			g.drawString("Balle "+ balle ,400,20);
+		 
 	    
 	    
 		 for(int i = 0; i<handler.object.size();i++) {

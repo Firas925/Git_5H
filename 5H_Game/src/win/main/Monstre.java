@@ -44,8 +44,17 @@ public class Monstre  extends GameObject {
 					  
 			  }
 		 } 
-	
+			  if(tempObject.getId() == ID.balle) { 
+				  if(getBounds().intersects(tempObject.getBounds())) {
+				  hp-=50 ; 
+				  handler.removeObject(tempObject);
+				  }
+			  }
+			  	  
 		}
+		
+		
+		if(hp<=0) {handler.removeObject(this);}
 	}
 
 	

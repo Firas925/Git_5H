@@ -12,6 +12,7 @@ public class hero extends GameObject {
 	public static int tr; 
 	Handler handler ; 
 	Game game ;
+	public static int BS = 0;
 	
 	public hero(int x, int y, ID id , Handler handler, Game game) {
 		super(x, y, id);
@@ -93,10 +94,19 @@ public class hero extends GameObject {
 						
 				if(tempObject.getId() == ID.magique) {
 					if(getBounds().intersects(tempObject.getBounds())) {
+						
+						if(BS==0) {
 						Game.ptvieH +=5;
 						handler.removeObject(tempObject);
+						BS=1;
 						}
-				}
+						else {
+							Game.balle +=30;
+							handler.removeObject(tempObject);
+							BS=0;
+							
+						}
+				}}
 				
 				
 				if(tempObject.getId() == ID.tresor) {
