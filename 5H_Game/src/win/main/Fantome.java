@@ -9,13 +9,14 @@ public class Fantome extends Monstre{
 	
 	
    private Handler handler ;
+   
 	
 	Random r = new Random() ;
 	int choose = 0 ; 
 	int hp=100 ;
 
-	public Fantome(int x, int y, ID id, Handler handler) {
-		super(x, y, id, handler);
+	public Fantome(int x, int y, ID id, Handler handler,Game game) {
+		super(x, y, id, handler,game);
 		
 	}
 	

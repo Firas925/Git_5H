@@ -13,12 +13,14 @@ public class Monstre  extends GameObject {
 	Random r = new Random() ;
 	int choose = 0 ; 
 	int hp=100 ;
+	Game game ;
 
 	
 
-	public Monstre(int x, int y, ID id , Handler handler) {
+	public Monstre(int x, int y, ID id , Handler handler , Game game) {
 		super(x, y, id);
 		this.handler=handler ;
+		this.game=game ; 
 	}
 
 	
@@ -54,7 +56,8 @@ public class Monstre  extends GameObject {
 		}
 		
 		
-		if(hp<=0) {handler.removeObject(this);}
+		if(hp<=0) {handler.removeObject(this);
+					Game.ptvieM -=5 ;}
 	}
 
 	

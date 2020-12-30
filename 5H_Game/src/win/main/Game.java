@@ -25,6 +25,9 @@ public class Game extends  Canvas implements Runnable {
 
 	public static  int ptvieH = 100 ;
 	
+	public static int ptvieM = 100 ;
+	
+	
 	
 	
 	public int okhero = 0 ;
@@ -36,6 +39,8 @@ public class Game extends  Canvas implements Runnable {
 	public static int balle = 100 ;
 	
 	
+	
+	
 	/*public int getPtvieH() {
 		return ptvieH;
 	}
@@ -43,7 +48,7 @@ public class Game extends  Canvas implements Runnable {
 	public void setPtvieH(int ptvieH) {
 		this.ptvieH = ptvieH;
 	}*/
-	public int ptvieM = 100 ;
+	
 	
 	private BufferedImage level = null;
 	
@@ -245,13 +250,13 @@ public class Game extends  Canvas implements Runnable {
 							
 				
 				if ((red > 200) & (green > 200) & (blue  < 10))
-					handler.addObject(new Fantome(xx*32,yy*32, ID.fantome,handler));
+					handler.addObject(new Fantome(xx*32,yy*32, ID.fantome,handler,this));
 			
 				if (red ==0 & green == 0 & blue == 0)
 					handler.addObject(new Box(xx*32,yy*32, ID.boîte));
 				
 				if (green == 255) {
-					handler.addObject(new Monstre(xx*32,yy*32, ID.monstre, handler));
+					handler.addObject(new Monstre(xx*32,yy*32, ID.monstre, handler,this));
 					okmonstre = 1 ;}
 
 				
