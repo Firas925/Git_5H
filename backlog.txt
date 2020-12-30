@@ -17,13 +17,12 @@ Les fonctionnalités:
 - Les monstres ont un nombre initial de points de vie. 
 - Le déplacement des monstres se fait d'une manière aléatoire ou bien d'une manière intelligente pour attraper le héros. Une fois qu’il s’approche du héros, son déplacement change de telle sorte à ce qu’il attrape le héros (poursuite), c’est ce qu’on entend par “déplacement intelligent”.
 - Le héros perd des points de vie lors d'un contact avec un monstre.
-- Le héros peut attaquer le monstre avec lequel il est en contact ou sur la case adjacente. 
+- Le héros peut attaquer le monstre. 
+ -Le héros a un nombre intial d'armes
 - Le héros peut récupérer des armes.
-- Le héros attaque les monstres avec des armes. 
-- Les monstres perdent des points de vie s’ils sont en contact avec le héros ou si le héros les attaque.
+- Les monstres perdent des points de vie si le héros les attaque.
 - Le héros meurt s'il perd tous ses points de vie.
 - Un monstre meurt s’il perd tous ses points de vie. Dans ce cas, il disparaît de l’écran.
-- Le héros gagne des points de vie s'il tue un monstre.
 
 
 
@@ -85,15 +84,17 @@ Sprint 3 : Génération des cases spéciales :
 
 Sprint 4 : Définition des attaques 
 
--Le héros perd des points de vie lors d'un contact avec un monstre.
--Le héros peut attaquer le monstre avec lequel il est en contact ou sur la case adjacente. 
--Le héros peut récupérer des armes.
+- Le héros perd des points de vie lors d'un contact avec un monstre.
+- Le héros peut attaquer le monstre. 
+ -Le héros a un nombre intial d'armes
+- Le héros peut récupérer des armes. 
+- Les monstres perdent des points de vie si le héros les attaque.
+- Le héros meurt s'il perd tous ses points de vie.
+- Un mostre meurt s’il perd ses points de vie. Dans ce cas, il disparaît de l’écran.
 
 
 
 Sprint 5
-- Le héros attaque les monstres avec des armes. 
--Les monstres perdent des points de vie s’ils sont en contact avec le héros ou si le héros les attaque.
--Le héros meurt s'il perd tous ses points de vie.
--Un monstre meurt s’il perd tous ses points de vie. Dans ce cas, il disparaît de l’écran.
+- Générer les sprites pour les joueurs et les monstres
+-réalsier le menu pour le jeu.
 -Le héros gagne des points de vie s'il tue un monstre.
