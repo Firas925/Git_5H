@@ -118,6 +118,12 @@ public class hero extends GameObject {
 						
 					} 
 				}
+				
+				if(tempObject.getId() == ID.monstre) {
+					if(getBounds().intersects(tempObject.getBounds())) {
+						
+						Game.ptvieH-- ;
+						}
 		
 		} 
 		
