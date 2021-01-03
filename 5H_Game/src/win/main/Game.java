@@ -263,7 +263,7 @@ public class Game extends  Canvas implements Runnable {
 				if ( blue == 255 ) {
 					handler.addObject(new hero(xx*32,yy*32, ID.joueur, handler,this)); 
 					
-				  okhero = 1 ;}
+				okhero = 1 ;}
 					
 					
 				
@@ -287,13 +287,22 @@ public class Game extends  Canvas implements Runnable {
 		Game game = new Game() ; 
 		
 		if (game.okhero == 0) 
-			System.out.print("hero n'existe pas") ;
+			System.out.print("hero n'existe pas \n") ;
+		
+		else if (game.okhero == -1) {
+			game.stop();
+		}
+		
+		if (Game.ptvieM<=0)
+			game.stop();
 			
 		if (game.okmonstre == 0) 
 			System.out.print("monstre n'existe pas") ;
 		
 		if (game.oktresor == 0) 
 			System.out.print("tresor n'existe pas") ;
+		
+		
 			
 		
 		

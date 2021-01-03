@@ -125,12 +125,25 @@ public class hero extends GameObject {
 						Game.ptvieH-- ;
 						}
 		
-		} 
+		}
+				if(tempObject.getId() == ID.fantome) {
+					if(getBounds().intersects(tempObject.getBounds())) {
+						
+						Game.ptvieH-- ;
+						}
+		
+		}
+					
+					
+				}
+		if (Game.ptvieH<=0) {
+			game.okhero = -1;
+			handler.removeObject(this);
+			System.out.print("Votre héro est mort. GAME OVER !") ;
+		}
+		}
 		
 		
-		
-		
-	}
 	
 	public static int getTr() {
 		return tr;
