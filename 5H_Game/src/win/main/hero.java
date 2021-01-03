@@ -67,7 +67,10 @@ public class hero extends GameObject {
 		for(int i = 0; i < handler.object.size(); i++) {
 				GameObject tempObject = handler.object.get(i);
 				
-				if(tempObject.getId() == ID.boîte) {
+		
+				
+				
+ 				if(tempObject.getId() == ID.boîte) {
 					if(getBounds().intersects(tempObject.getBounds())) {
 						x+=VelX*-1;
 						y+= VelY*-1;

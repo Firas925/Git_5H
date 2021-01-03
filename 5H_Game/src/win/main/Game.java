@@ -260,10 +260,9 @@ public class Game extends  Canvas implements Runnable {
 					okmonstre = 1 ;}
 
 				
-				if ( blue == 255 ) {
+				if ( blue == 255 & red==0 & green==0) {
 					handler.addObject(new hero(xx*32,yy*32, ID.joueur, handler,this)); 
-					
-				  okhero = 1 ;}
+				    okhero = 1 ;}
 					
 					
 				
@@ -295,7 +294,6 @@ public class Game extends  Canvas implements Runnable {
 		if (game.oktresor == 0) 
 			System.out.print("tresor n'existe pas") ;
 			
-		
 		
 		
 	
