@@ -57,7 +57,7 @@ public class Monstre  extends GameObject {
 		
 		
 		if(hp<=0) {handler.removeObject(this);
-					Game.ptvieM -=100 ;}
+					Game.ptvieM -=25 ;}
 		
 		if(Game.ptvieM<=0) {
 			System.out.println("Félicitations, vous avez gagné !");

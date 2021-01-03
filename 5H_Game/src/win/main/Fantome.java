@@ -41,8 +41,8 @@ public class Fantome extends Monstre{
 				  if (choose ==0) {
 						VelX=(r.nextInt(4 - -4)+ -4) ;
 						VelY=(r.nextInt(4 - -4)+ -4) ;
-					  
-			  }
+				  }
+			  
 				/*  for(int i = 0 ;i<handler.object.size();i++ ) {
 
 					  GameObject tempObject =handler.object.get(i) ;
@@ -53,10 +53,10 @@ public class Fantome extends Monstre{
 				 	  handler.removeObject(tempObject);
 					  }
 				  }
-			
+				  }
 	}
-				  if(hp<=0) {handler.removeObject(this);} */
-	// } 
+				  if(hp<=0) {handler.removeObject(this);} } */
+	// }  
 	
 	//	}
 	}
