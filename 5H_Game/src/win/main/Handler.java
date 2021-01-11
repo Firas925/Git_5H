@@ -86,7 +86,11 @@ public void setLeft(boolean left) {
 	this.left = left;
 }
 
-
+/*public  void clearLevel() {
+	
+	this.object.clear();
+	
+}*/
 	
 	 
 	

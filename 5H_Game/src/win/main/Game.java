@@ -30,12 +30,13 @@ public class Game extends  Canvas implements Runnable {
 	
 	public static int ptvieM = 100 ;
 	
-
+	public static int l = 1;    //level
 	
 	
 	public int okhero = 0 ;
 	public int okmonstre = 0 ;
 	public int oktresor = 0 ;
+	public static int trA=0;
 	
 	
 	
@@ -158,8 +159,15 @@ public class Game extends  Canvas implements Runnable {
 		handler.tick() ;
 			
 		
-		} //else if (gameState==STATE.Menu)
-		/*menu.tick();*/
+		  if (ptvieH <= 0) {	
+			gameState = STATE.GameOver ; }
+		  if (ptvieM<=0)
+			  gameState = STATE.pasPTVIEM ;
+		  if (trA==1)
+			  gameState = STATE.Tresorr ;
+			
+		}
+		
 		}
 
 	
@@ -223,7 +231,7 @@ public class Game extends  Canvas implements Runnable {
 					GameObject temp =  handler.object.get(i);
 					 hero h = (hero) temp  ;
 					if(h.getTr() == 1) {
-						g.setColor(Color.yellow);
+						 g.setColor(Color.yellow);
 						 g.drawRect(50, 750, 200, 32);
 						 g.setColor(Color.yellow);
 						 g.drawString(" Vous avez gagné " , 50 , 750 );
@@ -237,10 +245,12 @@ public class Game extends  Canvas implements Runnable {
 		   
 		   
 	   } /********* definition menu*********/
-	    }else if (gameState==STATE.Menu)
+	    }
+		 else if (gameState==STATE.Menu)
 	    	
 	    	
-	        {Font fnt= new Font("arial",1,50);
+	        {
+	        Font fnt= new Font("arial",1,50);
 	        Font fnt2= new Font("arial",1,30);
 	        
 	        
@@ -257,6 +267,46 @@ public class Game extends  Canvas implements Runnable {
 	    	g.drawRect(370,200,200, 64);
 	        g.drawRect(370,270, 200, 64);
 	        g.drawRect(370,340, 200, 64);}
+		 
+		 else if (gameState==STATE.Help)	
+	        {
+			 Font fnt= new Font("arial",1,20);
+			
+			 g.setFont(fnt);
+			 g.drawString("HEEEEEELP !!", 400, 100);
+			 
+	        }
+		 
+		 
+		 
+		 else if (gameState==STATE.GameOver)	
+	        {
+			 Font fnt3= new Font("arial",1,60);
+			 g.setColor(Color.yellow);
+			 g.setFont(fnt3);
+			 g.drawString("GAME OVER", 350, 400);
+			 
+	        }
+		 else if (gameState==STATE.Tresorr)	
+	        {
+			 Font fnt3= new Font("arial",1,60);
+			 g.setColor(Color.yellow);
+			 g.setFont(fnt3);
+			 g.drawString("CAse trésor atteinte,Vous a gagné !", 350, 400);
+			 
+	        }
+		 else if (gameState==STATE.pasPTVIEM)	
+	        {
+			 Font fnt3= new Font("arial",1,60);
+			 g.setColor(Color.yellow);
+			 g.setFont(fnt3);
+			 g.drawString("Vous avez gagné !", 350, 400);
+			 
+	        }
+		 
+		 
+		 
+		 
 	    
 	    /////////////////////////////////
 		 

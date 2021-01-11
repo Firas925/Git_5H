@@ -2,5 +2,9 @@ package win.main;
 
 public enum STATE {
 Menu(),
-Game()
+Help(),
+Game(),
+Tresorr() ,
+pasPTVIEM(),
+GameOver()
 }
