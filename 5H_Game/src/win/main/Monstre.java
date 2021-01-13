@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
+import java.awt.image.BufferedImage;
 import java.util.Random;
 
 public class Monstre  extends GameObject {
@@ -13,14 +14,18 @@ public class Monstre  extends GameObject {
 	Random r = new Random() ;
 	int choose = 0 ; 
 	int hp=100 ;
+	
+	private BufferedImage monster_image;
 	Game game ;
 
 	
 
-	public Monstre(int x, int y, ID id , Handler handler , Game game) {
-		super(x, y, id);
+	public Monstre(int x, int y, ID id , Handler handler , Game game, SpriteSheet ss) {
+		super(x, y, id, ss);
 		this.handler=handler ;
-		this.game=game ; 
+		this.game=game ;
+		
+		monster_image = ss.grabImage(4, 1, 32, 32);
 	}
 
 	
@@ -66,8 +71,7 @@ public class Monstre  extends GameObject {
 
 	
 	public void render(Graphics g) {
-		g.setColor(Color.red) ;
-		g.fillRect(x, y, 32, 32);
+		g.drawImage(monster_image,x, y, null);
 		
 		
 		

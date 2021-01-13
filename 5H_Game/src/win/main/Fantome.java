@@ -15,8 +15,8 @@ public class Fantome extends Monstre{
 	int choose = 0 ; 
 	int hp=100 ;
 
-	public Fantome(int x, int y, ID id, Handler handler,Game game) {
-		super(x, y, id, handler,game);
+	public Fantome(int x, int y, ID id, Handler handler,Game game, SpriteSheet ss) {
+		super(x, y, id, handler,game, ss);
 		
 	}
 	

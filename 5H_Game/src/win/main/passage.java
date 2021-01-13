@@ -6,8 +6,8 @@ import java.awt.Rectangle;
 
 public class passage extends GameObject{
 
-	public passage (int x, int y, ID id) {
-		super(x, y, id);
+	public passage (int x, int y, ID id, SpriteSheet ss) {
+		super(x, y, id, ss);
 		
 	}
 

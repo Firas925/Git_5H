@@ -6,8 +6,8 @@ import java.awt.Rectangle;
 
 public class tresor extends GameObject{
 
-	public tresor(int x, int y, ID id) {
-		super(x, y, id);
+	public tresor(int x, int y, ID id, SpriteSheet ss) {
+		super(x, y, id, ss);
 		
 	}
 

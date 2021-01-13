@@ -4,6 +4,7 @@ package win.main;
 import java.awt.Color;
 import java.awt.Graphics ;
 import java.awt.Rectangle ;
+import java.awt.image.BufferedImage;
 
 public class hero extends GameObject {
 
@@ -12,12 +13,17 @@ public class hero extends GameObject {
 	public static int tr; 
 	Handler handler ; 
 	Game game ;
+	
+	private BufferedImage hero_image;
+	
 	public static int BS = 0;
 	
-	public hero(int x, int y, ID id , Handler handler, Game game) {
-		super(x, y, id);
+	public hero(int x, int y, ID id , Handler handler, Game game, SpriteSheet ss) {
+		super(x, y, id, ss);
 		this.handler = handler ;
 		this.game=game ;
+		
+		hero_image = ss.grabImage(1, 1, 32, 48);
 	
 	}
 
@@ -83,7 +89,7 @@ public class hero extends GameObject {
 					if(getBounds().intersects(tempObject.getBounds())) {
 						handler.removeObject(tempObject);
 						handler.removeObject(this);
-						handler.addObject(new hero(170,180, ID.joueur, handler,game));
+						handler.addObject(new hero(170,180, ID.joueur, handler,game, ss));
 						
 					
 					}}
@@ -170,8 +176,7 @@ public class hero extends GameObject {
 
 
 	public void render(Graphics g) {
-		g.setColor(Color.BLUE);
-		g.fillRect(x, y, 32, 48);
+		g.drawImage(hero_image, x, y, null);
 	
 		
 	}

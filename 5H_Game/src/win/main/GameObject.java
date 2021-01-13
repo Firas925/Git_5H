@@ -8,12 +8,13 @@ public abstract class GameObject {
 	 protected int x , y ;  //coordonnées 
 	 protected float VelX =0 , VelY = 0 ; // vitesse
 	 public ID id;
+	 protected SpriteSheet ss;
 	 
-	 public GameObject(int x , int y, ID id ) {
+	 public GameObject(int x , int y, ID id, SpriteSheet ss ) {
 		 this.x=x;
 		 this.y=y;
 		 this.id = id;
-		 
+		 this.ss = ss;
 	 }
 
 	 

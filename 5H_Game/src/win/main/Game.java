@@ -25,7 +25,9 @@ public class Game extends  Canvas implements Runnable {
 	private Thread thread ; 
 	private Camera camera;
 	private Handler handler ; 
-
+	private SpriteSheet ss;
+	
+	
 	public static  int ptvieH = 100 ;
 	
 	public static int ptvieM = 100 ;
@@ -55,7 +57,8 @@ public class Game extends  Canvas implements Runnable {
 	
 	
 	private BufferedImage level = null;
-	
+	private BufferedImage sprite_sheet = null;
+	private BufferedImage floor = null;
 	
 	
 	
@@ -88,10 +91,17 @@ public class Game extends  Canvas implements Runnable {
 	//	if(gameState==STATE.Game) {
 		this.addKeyListener(new KeyInput(handler));
 		
-		this.addMouseListener(new MouseInput(handler,camera,this));
+		
 	
 		BufferedImageLoader loader  = new BufferedImageLoader();
 		level = loader.loadImage("/lvltest9.png");
+		sprite_sheet = loader.loadImage("/wizard_images.png");
+		
+		ss = new SpriteSheet(sprite_sheet);
+		
+		floor = ss.grabImage(4, 2, 32, 32);
+		
+		this.addMouseListener(new MouseInput(handler,camera,this, ss));
 		
 		loadLevel(level);// }
 		gameState=STATE.Menu ;
@@ -188,12 +198,16 @@ public class Game extends  Canvas implements Runnable {
 		 Graphics2D g2d = (Graphics2D) g;
 		 /////////////////////////////////
 		 if(gameState==STATE.Game) {
-		 g.setColor(Color.cyan);
-		 g.fillRect(0, 0, 1000, 700); 
+			 
 		 
 		 g2d.translate(-camera.getX(), -camera.getY());
 		 
-	    handler.render(g);
+		 for(int xx=0; xx<30*72; xx+=32) {
+			   for(int yy=0; yy<30*72; yy+=32) {
+				   g.drawImage(floor,xx,yy,null);
+			   }
+		   }
+		 handler.render(g);
 	    
 	   
 	    
@@ -330,42 +344,42 @@ public class Game extends  Canvas implements Runnable {
 				
 				
 				if ((red==0) & (green ==150 ) & (blue == 150))
-					handler.addObject(new passage(xx*32,yy*32, ID.passage));
+					handler.addObject(new passage(xx*32,yy*32, ID.passage, ss));
 				
 				
 
 				if ((red==255) & (green ==149 ) & (blue == 0)) {
-					handler.addObject(new tresor(xx*32,yy*32, ID.tresor)); 
+					handler.addObject(new tresor(xx*32,yy*32, ID.tresor, ss)); 
 					oktresor = 1 ;}
 
 				if ((red==153) & (green == 153 ) & (blue ==153))
-					handler.addObject(new tresor(xx*32,yy*32, ID.tresor));
+					handler.addObject(new tresor(xx*32,yy*32, ID.tresor, ss));
 
 				
 				if ((red == 50) & (green == 50 ) & (blue == 50))
-					{handler.addObject(new piege(xx*32,yy*32, ID.piege)) ;
+					{handler.addObject(new piege(xx*32,yy*32, ID.piege, ss)) ;
 					System.out.println("xx"+xx+"yy"+yy) ;
 					
 					}
 				
 				if((red==150) & (green ==0 ) & (blue == 80))
-					handler.addObject(new magique(xx*32, yy*32, ID.magique));
+					handler.addObject(new magique(xx*32, yy*32, ID.magique, ss));
 				
 							
 				
 				if ((red > 200) & (green > 200) & (blue  < 10))
-					handler.addObject(new Fantome(xx*32,yy*32, ID.fantome,handler,this));
+					handler.addObject(new Fantome(xx*32,yy*32, ID.fantome,handler,this, ss));
 			
 				if (red ==0 & green == 0 & blue == 0)
-					handler.addObject(new Box(xx*32,yy*32, ID.boîte));
+					handler.addObject(new Box(xx*32,yy*32, ID.boîte, ss));
 				
 				if (green == 255) {
-					handler.addObject(new Monstre(xx*32,yy*32, ID.monstre, handler,this));
+					handler.addObject(new Monstre(xx*32,yy*32, ID.monstre, handler,this, ss));
 					okmonstre = 1 ;}
 
 				
 				if ( blue == 255 & red==0 & green==0) {
-					handler.addObject(new hero(xx*32,yy*32, ID.joueur, handler,this)); 
+					handler.addObject(new hero(xx*32,yy*32, ID.joueur, handler,this, ss)); 
 
 				    okhero = 1 ;}
 			}

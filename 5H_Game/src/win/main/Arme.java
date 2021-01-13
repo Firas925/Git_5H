@@ -9,8 +9,8 @@ public class Arme extends GameObject {
 	private Handler handler ; 
 	
 	
-	public Arme(int x, int y, ID id, Handler handler,int mx,int my) {
-		super(x, y, id);
+	public Arme(int x, int y, ID id, Handler handler,int mx,int my, SpriteSheet ss) {
+		super(x, y, id, ss);
 		this.handler = handler ; 
 		VelX=(mx-x)/10 ; 
 		VelY=(my-y)/10 ; 

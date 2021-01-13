@@ -6,8 +6,8 @@ import java.awt.Rectangle;
 
 public class piege extends GameObject{
 
-	public piege(int x, int y, ID id) {
-		super(x, y, id);
+	public piege(int x, int y, ID id, SpriteSheet ss) {
+		super(x, y, id, ss);
 		
 	}
 
