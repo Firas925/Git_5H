@@ -192,7 +192,6 @@ public class Game extends  Canvas implements Runnable {
 			
 		}
 		
-		 
 		
 		 Graphics g = bs.getDrawGraphics() ;
 		 Graphics2D g2d = (Graphics2D) g;
@@ -202,8 +201,8 @@ public class Game extends  Canvas implements Runnable {
 		 
 		 g2d.translate(-camera.getX(), -camera.getY());
 		 
-		 for(int xx=0; xx<30*72; xx+=32) {
-			   for(int yy=0; yy<30*72; yy+=32) {
+		 for(int xx=0; xx<32*100; xx+=32) {
+			   for(int yy=0; yy<32*100; yy+=32) {
 				   g.drawImage(floor,xx,yy,null);
 			   }
 		   }
@@ -285,9 +284,15 @@ public class Game extends  Canvas implements Runnable {
 		 else if (gameState==STATE.Help)	
 	        {
 			 Font fnt= new Font("arial",1,20);
-			
+
 			 g.setFont(fnt);
-			 g.drawString("HEEEEEELP !!", 400, 100);
+			 g.drawString("utiliser les flèches pour le déplacement", 200, 500);
+			 g.drawString("cliquer sur la souris pour activer les armes", 200, 530);
+			 g.drawString("Case magique : vous gagnez des armes et des points de vie", 200, 560);
+			 g.drawString("Case Passage : couleur verte :  téléportation de l'héro", 200, 590);
+			 g.drawString("Case Piège : couleur jaune : perdre des points de vie", 200, 620);
+			 g.drawString("Case trésor : couleur grise : vous gagnez", 200, 650);
+			 
 			 
 	        }
 		 
@@ -303,10 +308,10 @@ public class Game extends  Canvas implements Runnable {
 	        }
 		 else if (gameState==STATE.Tresorr)	
 	        {
-			 Font fnt3= new Font("arial",1,60);
+			 Font fnt3= new Font("arial",1,40);
 			 g.setColor(Color.yellow);
 			 g.setFont(fnt3);
-			 g.drawString("CAse trésor atteinte,Vous a gagné !", 350, 400);
+			 g.drawString("Case trésor atteinte,Vous a gagné !", 30, 400);
 			 
 	        }
 		 else if (gameState==STATE.pasPTVIEM)	

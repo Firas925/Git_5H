@@ -29,9 +29,9 @@ public class Menu extends MouseAdapter {
 			game.gameState=STATE.Game;
 		}
 		
-	/*	if (mouseOver(mx, my,370,270, 200, 64)) {	
+		if (mouseOver(mx, my,370,270, 200, 64)) {	
 			game.gameState=STATE.Help;
-		} */
+		} 
 		
 		if (mouseOver(mx, my,370,340, 200, 64)) {	
 			System.exit(1) ;
