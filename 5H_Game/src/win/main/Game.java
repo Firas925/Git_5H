@@ -292,6 +292,7 @@ public class Game extends  Canvas implements Runnable {
 			 g.drawString("Case Passage : couleur verte :  téléportation de l'héro", 200, 590);
 			 g.drawString("Case Piège : couleur jaune : perdre des points de vie", 200, 620);
 			 g.drawString("Case trésor : couleur grise : vous gagnez", 200, 650);
+			 gameState=STATE.Menu ;
 			
 			 
 			 
