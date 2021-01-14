@@ -6,5 +6,6 @@ Help(),
 Game(),
 Tresorr() ,
 pasPTVIEM(),
+TryAgain(),
 GameOver()
 }

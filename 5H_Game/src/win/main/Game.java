@@ -306,6 +306,7 @@ public class Game extends  Canvas implements Runnable {
 			 g.setColor(Color.yellow);
 			 g.setFont(fnt3);
 			 g.drawString("GAME OVER", 350, 400);
+			 gameState=STATE.TryAgain ;
 			 
 	        }
 		 else if (gameState==STATE.Tresorr)	
@@ -314,6 +315,7 @@ public class Game extends  Canvas implements Runnable {
 			 g.setColor(Color.yellow);
 			 g.setFont(fnt3);
 			 g.drawString("Case trésor atteinte,Vous a gagné !", 30, 400);
+			// gameState=STATE.TryAgain ;
 			// gameState=STATE.Game ;
 			// g.drawString("Niveau 2", 30, 400);
 			 
@@ -322,16 +324,26 @@ public class Game extends  Canvas implements Runnable {
 	        }
 		 else if (gameState==STATE.pasPTVIEM)	
 	        {
-			 Font fnt3= new Font("arial",1,60);
+			 Font fnt3= new Font("arial",1,50);
 			 g.setColor(Color.yellow);
 			 g.setFont(fnt3);
 			 g.drawString("Vous avez gagné !", 350, 400);
+		//	 gameState=STATE.TryAgain ;
 			 
 	        }
 		 
-		 
-		 
-		 
+		 else if (gameState==STATE.TryAgain)
+		    	
+		    	
+	        {
+	        Font fnt= new Font("arial",1,80); 
+		     g.setColor(Color.yellow);
+		     g.drawString("TRY AGAIN", 420, 240);
+		     g.drawRect(370,200,200, 64); 
+		    
+		     
+		      }
+		  
 	    
 	    /////////////////////////////////
 		 
