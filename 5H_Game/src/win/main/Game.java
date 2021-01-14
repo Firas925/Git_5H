@@ -292,6 +292,7 @@ public class Game extends  Canvas implements Runnable {
 			 g.drawString("Case Passage : couleur verte :  téléportation de l'héro", 200, 590);
 			 g.drawString("Case Piège : couleur jaune : perdre des points de vie", 200, 620);
 			 g.drawString("Case trésor : couleur grise : vous gagnez", 200, 650);
+			
 			 
 			 
 	        }
@@ -312,6 +313,10 @@ public class Game extends  Canvas implements Runnable {
 			 g.setColor(Color.yellow);
 			 g.setFont(fnt3);
 			 g.drawString("Case trésor atteinte,Vous a gagné !", 30, 400);
+			// gameState=STATE.Game ;
+			// g.drawString("Niveau 2", 30, 400);
+			 
+			 
 			 
 	        }
 		 else if (gameState==STATE.pasPTVIEM)	
@@ -384,12 +389,23 @@ public class Game extends  Canvas implements Runnable {
 
 				
 				if ( blue == 255 & red==0 & green==0) {
-					handler.addObject(new hero(xx*32,yy*32, ID.joueur, handler,this, ss)); 
+					handler.addObject(new hero(xx*32,yy*32, ID.joueur, handler,this,camera, ss)); 
 
 				    okhero = 1 ;}
 			}
 			}
+		
+		
+		
 	}
+	
+ private	int CalculPointdeVie (int i)
+	 {return (ptvieM-i) ;}
+ 
+ private	int CAlculBalle (int i)
+ {return (balle+i) ;}
+ 
+ 
 	public static void main(String[] args) {
 		
 		
@@ -410,12 +426,6 @@ public class Game extends  Canvas implements Runnable {
 		
 		if (game.oktresor == 0) 
 			System.out.print("tresor n'existe pas") ;
-		
-		
-			
-		
-		
-	
 		
 		
 

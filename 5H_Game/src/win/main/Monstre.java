@@ -92,5 +92,5 @@ public class Monstre  extends GameObject {
 		return new Rectangle(x-20,y-20,64,64);
 	} 
 	
-
+	 private boolean intersection 	(int i) {return true ;}
 }

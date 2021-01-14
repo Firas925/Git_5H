@@ -2,7 +2,11 @@ package win.main;
 
 import java.util.ArrayList;
 import java.util.LinkedList ; 
-import java.awt.Graphics; 
+import java.awt.Graphics;
+import java.awt.image.BufferedImage; 
+
+
+
 
 public class Handler {
 	
@@ -86,14 +90,13 @@ public void setLeft(boolean left) {
 	this.left = left;
 }
 
-/*public  void clearLevel() {
+public  void clearLevel() {
 	
-	this.object.clear();
+	object.clear();
 	
-}*/
-	
-	 
-	
+}
+//loading the level
+
 	
 
 }

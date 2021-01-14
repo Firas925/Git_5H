@@ -13,15 +13,16 @@ public class hero extends GameObject {
 	public static int tr; 
 	Handler handler ; 
 	Game game ;
-	
+	Camera cam ;
 	private BufferedImage hero_image;
 	
 	public static int BS = 0;
 	
-	public hero(int x, int y, ID id , Handler handler, Game game, SpriteSheet ss) {
+	public hero(int x, int y, ID id , Handler handler, Game game, Camera cam ,SpriteSheet ss) {
 		super(x, y, id, ss);
 		this.handler = handler ;
 		this.game=game ;
+		this.cam=cam ;
 		
 		hero_image = ss.grabImage(1, 1, 32, 48);
 	
@@ -89,7 +90,7 @@ public class hero extends GameObject {
 					if(getBounds().intersects(tempObject.getBounds())) {
 						handler.removeObject(tempObject);
 						handler.removeObject(this);
-						handler.addObject(new hero(170,180, ID.joueur, handler,game, ss));
+						handler.addObject(new hero(170,180, ID.joueur, handler,game,cam, ss));
 						
 					
 					}}
@@ -126,7 +127,7 @@ public class hero extends GameObject {
 						tr = 1 ;
 						Game.trA=1;
 						System.out.println("Vous avez atteint la case trésor, le joueur a gagné! ");
-						//handler.clearLevel();
+						handler.clearLevel();
 						
 					} 
 				}
@@ -187,7 +188,7 @@ public class hero extends GameObject {
 		return new Rectangle(x, y, 32, 48);
 	}
 	
-	
+ private boolean intersection 	(int i) {return true ;}
 
 }
 
