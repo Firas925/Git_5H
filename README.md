@@ -25,6 +25,6 @@ Si le héros atteint la case trésor, la partie est terminée et le joueur a gag
 Pour lancer le jeu , il faut récupérer les fichiers dans le dossiers 5H_Game.
 Il faut avoir eclipse comme IDE pour povoir ouvrir le projet , le compiler et l'éxécuter.
 (version apache-ant-1.9.15)
-Pour compiler le prohet , on peut aussi utiliser la commande : ant compile .
+Pour compiler le projet , on peut aussi utiliser la commande : ant compile .
 Vous pouvez exécuter directement le projet en exécutant 5H_v2.exe
  
